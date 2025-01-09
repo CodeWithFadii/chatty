@@ -13,6 +13,7 @@ class AppTextWidget extends StatelessWidget {
   final TextAlign textAlign;
   final bool softWrap;
   final Color? color;
+  final double height;
   final Color? underLineColor;
   final TextDecoration textDecoration;
   final List<Shadow>? shadows;
@@ -31,6 +32,7 @@ class AppTextWidget extends StatelessWidget {
     this.overflow = TextOverflow.clip,
     this.shadows,
     this.padding,
+    this.height = 1,
   });
 
   @override
@@ -46,10 +48,11 @@ class AppTextWidget extends StatelessWidget {
         style: TextStyle(
           shadows: shadows,
           decoration: textDecoration,
-          decorationColor: underLineColor ?? AppColors.textBlack,
+          decorationColor: underLineColor ?? AppColors.textWhite,
           fontWeight: fontWeight,
+          height: height,
           fontSize: fontSize ?? 16.sp,
-          color: color ?? AppColors.textBlack,
+          color: color ?? AppColors.textWhite,
         ),
       ),
     );

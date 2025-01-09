@@ -4,8 +4,11 @@
 <dict>
   <key>CFBundleDevelopmentRegion</key>
   <string>en</string>
+  <key>CFBundleDisplayName</key>
+  <string>Chatty</string>
   <key>CFBundleExecutable</key>
   <string>App</string>
+
   <key>CFBundleIdentifier</key>
   <string>io.flutter.flutter.app</string>
   <key>CFBundleInfoDictionaryVersion</key>

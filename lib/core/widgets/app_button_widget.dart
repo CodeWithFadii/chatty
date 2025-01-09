@@ -1,3 +1,4 @@
+import 'package:chatty/core/constants/app_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/app_colors.dart';
@@ -13,9 +14,9 @@ class AppButtonWidget extends StatelessWidget {
 
   final VoidCallback onTap;
   final double? fontSize;
-  final bool showLeading;
+  final Widget? trailing;
   final EdgeInsets? padding;
-  final double width;
+  final double? width;
   final BorderRadiusGeometry? borderRadius;
   const AppButtonWidget({
     super.key,
@@ -23,11 +24,11 @@ class AppButtonWidget extends StatelessWidget {
     required this.onTap,
     this.textColor,
     this.padding,
-    this.width = double.infinity,
+    this.width,
     this.borderRadius,
     this.color,
     this.fontWeight,
-    this.showLeading = false,
+    this.trailing,
     this.fontSize,
   });
 
@@ -39,9 +40,9 @@ class AppButtonWidget extends StatelessWidget {
         width: width,
         decoration: BoxDecoration(
           color: color ?? AppColors.primary,
-          borderRadius: borderRadius ?? BorderRadius.circular(8),
+          borderRadius: borderRadius ?? BorderRadius.circular(64),
         ),
-        padding: padding ?? EdgeInsets.symmetric(vertical: 1.4.h),
+        padding: padding ?? EdgeInsets.symmetric(vertical: 1.8.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -51,6 +52,11 @@ class AppButtonWidget extends StatelessWidget {
               fontSize: fontSize ?? 16.5,
               fontWeight: fontWeight ?? FontWeight.w700,
             ),
+            if (trailing != null)
+              Padding(
+                padding: EdgeInsets.only(left: 2.w),
+                child: trailing!,
+              )
           ],
         ),
       ),

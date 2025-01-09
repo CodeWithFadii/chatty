@@ -1,10 +1,13 @@
 import 'package:chatty/config/routes/routes.dart';
 import 'package:chatty/config/routes/routes_name.dart';
 import 'package:chatty/config/themes/app_theme.dart';
-import 'package:chatty/screens/onboarding/splash_screen.dart';
+import 'package:chatty/core/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Utils.changeStatusBarColor();
   runApp(const MyApp());
 }
 
@@ -13,11 +16,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.theme,
-      initialRoute: RoutesName.splash,
-      routes: Routes.routes,
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.theme,
+          initialRoute: RoutesName.splash,
+          routes: Routes.routes,
+        );
+      },
     );
   }
 }
