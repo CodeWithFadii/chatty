@@ -42,7 +42,7 @@ class AppButtonWidget extends StatelessWidget {
           color: color ?? AppColors.primary,
           borderRadius: borderRadius ?? BorderRadius.circular(64),
         ),
-        padding: padding ?? EdgeInsets.symmetric(vertical: 1.8.h),
+        padding: padding ?? EdgeInsets.symmetric(vertical: 1.6.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

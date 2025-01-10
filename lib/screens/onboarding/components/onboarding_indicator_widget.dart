@@ -16,8 +16,8 @@ class OnboardingIndicatorWidget extends StatelessWidget {
         children: [
           AnimatedContainer(
             duration: const Duration(milliseconds: 300),
-            height: index == 0 ? 14 : 10,
-            width: index == 0 ? 14 : 10,
+            height: index == 0 ? 14 : 8,
+            width: index == 0 ? 14 : 8,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: index == 0 ? AppColors.primary : AppColors.grey3,
@@ -26,8 +26,8 @@ class OnboardingIndicatorWidget extends StatelessWidget {
           SizedBox(width: 2.5.w),
           AnimatedContainer(
             duration: const Duration(milliseconds: 300),
-            height: index == 1 ? 14 : 10,
-            width: index == 1 ? 14 : 10,
+            height: index == 1 ? 14 : 8,
+            width: index == 1 ? 14 : 8,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: index == 1 ? AppColors.primary : AppColors.grey3,
